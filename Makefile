@@ -1,3 +1,4 @@
 test:
-	./bin/montador teste.asm teste.mif
-	./bin/simulador teste.mif charmap.mif
+	./bin/compilador -i ./src/main.c -o ./build/main.asm
+	./bin/montador ./build/main.asm ./build/main.mif
+	./bin/simulador ./build/main.mif charmap.mif
