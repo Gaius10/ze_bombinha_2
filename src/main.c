@@ -2,6 +2,13 @@
 
 int main()
 {
-    _outchar("A", 0);
+	char letra;
+
+	prints("Digite uma letra");
+
+	letra = getc();
+
+	prints("\nLetra digitada: ");
+	printc(letra);
     return 0;
 }
