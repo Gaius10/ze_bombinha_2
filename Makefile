@@ -1,4 +1,6 @@
 test: clear
+	cat ./src/main.asm >> ./build/main.asm
+
 	./bin/montador ./build/main.asm ./build/main.mif
 	./bin/simulador build/main.mif static/charmap.mif
 
