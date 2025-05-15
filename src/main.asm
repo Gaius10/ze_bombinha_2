@@ -1,8 +1,12 @@
 jmp main
 
-main:
-    loadn r0, #'A'
-    loadn r1, #0
-    outchar r0, r1
+command: var #1
 
-halt
+main:
+    loadn r7, #'b'
+    store command, r7
+
+    load r0, command
+    loadn r1, #1
+    outchar r0, r1
+    halt
