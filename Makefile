@@ -1,4 +1,4 @@
-test: clear
+run: clear
 	cat ./src/main.asm >> ./build/main.asm
 
 	./bin/montador ./build/main.asm ./build/main.mif
