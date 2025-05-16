@@ -1,12 +1,26 @@
-jmp main
+	jmp main
 
 command: var #1
 
 main:
-    loadn r7, #'b'
-    store command, r7
+	;
+	; ler comando do teclado
+	;	
+	ler:
+		inchar r0
+		loadn r1, #255
+		cmp r0, r1
+		jeq ler
+		loadn r1, #0
+		cmp r0, r1
+		jeq ler
 
-    load r0, command
-    loadn r1, #1
-    outchar r0, r1
+	;
+	; imprimir caractere lido no meio da tela
+	;
+	loadn r1, #620
+	outchar r0, r1
+	jmp main
+
     halt
+
