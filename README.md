@@ -1,4 +1,4 @@
-# ZÉ BOMBINHA
+# ZÉ BOMBINHA 2
 
 Nossa versão do jogo Bomber Men feita para rodar no processador do Simões.
 Link para o repositório do processador do ICMC (A.K.A. processador do Simões): https://github.com/simoesusp/Processador-ICMC
@@ -30,8 +30,5 @@ Ele conterá apenas nosso makefile, os utilitários e a estrutura de pastas, é 
 ## 4. Convenções
 
 - r0 reservado para retorno de funções
-- Funções sempre darão push de tras pra frente
-    - primeiro r7
-    - segundo r6
-    - etc...
-- Passagem de parâmetros também sempre de trás pra frente
+- Funções sempre darão push do r1 pra frente
+- Passagem de parâmetros do r1 pra frente
