@@ -15,13 +15,14 @@ t_content = ""
 with open(s_filename, 'r') as s_file:
     replacements = []
     s_content = s_file.read()
+    t_content = s_content
 
     for line in s_content.split("\n"):
         if line.startswith(INCLUDE_COMMAND):
             i_filename = line.split(' ')[2]
             i_file = open(i_filename, 'r')
             i_content = i_file.read()
-            t_content = s_content.replace(line, i_content)
+            t_content = t_content.replace(line, i_content)
 
 with open(t_filename, 'w') as t_file:
     t_file.write(t_content)
