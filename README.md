@@ -23,3 +23,15 @@ Desinstale seu sistema operacional, instale alguma distro Linux e então pule pa
 Um esqueleto desse repositório ficará disponível em algum lugar do github.
 Ele conterá apenas nosso makefile, os utilitários e a estrutura de pastas, é só baixar e começar a codar em assembly!
 
+## 3. Organização das pastas
+
+@todo
+
+## 4. Convenções
+
+- r0 reservado para retorno de funções
+- Funções sempre darão push de tras pra frente
+    - primeiro r7
+    - segundo r6
+    - etc...
+- Passagem de parâmetros também sempre de trás pra frente
