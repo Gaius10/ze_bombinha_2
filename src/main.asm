@@ -1,19 +1,6 @@
 jmp main
 
 ;; ####
-;; Command constants
-;;
-COMMAND_MOVE_UP: var #1
-COMMAND_MOVE_DOWN: var #1
-COMMAND_MOVE_LEFT: var #1
-COMMAND_MOVE_RIGHT: var #1
-
-;; ####
-;; Sprites constants
-;;
-SPRITE_PLAYER_ONE: var #4
-
-;; ####
 ;; Control variables
 ;;
 current_pos: var #1
@@ -33,7 +20,12 @@ main:
     halt
 
 execCommand:
-    push fr
+    push frsm
+        call execCommand
+
+        jmp main_loop
+    halt
+
     push r1
 
     load r1, COMMAND_MOVE_UP
@@ -56,21 +48,7 @@ execCommand:
     pop fr
     rts
 
-;; ####
-;; Configure commands
-;;
-static COMMAND_MOVE_UP, #'w'
-static COMMAND_MOVE_LEFT, #'a'
-static COMMAND_MOVE_DOWN, #'s'
-static COMMAND_MOVE_RIGHT, #'d'
-
-;; ####
-;; Configure sprites
-;;
-static SPRITE_PLAYER_ONE + #0, #'A'
-static SPRITE_PLAYER_ONE + #1, #'A'
-static SPRITE_PLAYER_ONE + #2, #'A'
-static SPRITE_PLAYER_ONE + #3, #'A'
-
 ;; #include src/stdio.asm
 ;; #include src/moves.asm
+;; #include config/commands.asm
+;; #include config/sprites.asm
