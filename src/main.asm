@@ -1,12 +1,12 @@
 jmp main
 
 ;; ####
-;; Command variables
+;; Command constants
 ;;
-command_move_up: var #1
-command_move_down: var #1
-command_move_left: var #1
-command_move_right: var #1
+COMMAND_MOVE_UP: var #1
+COMMAND_MOVE_DOWN: var #1
+COMMAND_MOVE_LEFT: var #1
+COMMAND_MOVE_RIGHT: var #1
 
 ;; ####
 ;; Control variables
@@ -32,19 +32,19 @@ execCommand:
     push fr
     push r1
 
-    load r1, command_move_up
+    load r1, COMMAND_MOVE_UP
     cmp r0, r1
     ceq command_MoveUp
 
-    load r1, command_move_down
+    load r1, COMMAND_MOVE_DOWN
     cmp r0, r1
     ceq command_MoveDown
 
-    load r1, command_move_left
+    load r1, COMMAND_MOVE_LEFT
     cmp r0, r1
     ceq command_MoveLeft
 
-    load r1, command_move_right
+    load r1, COMMAND_MOVE_RIGHT
     cmp r0, r1
     ceq command_MoveRight
 
@@ -56,16 +56,16 @@ loadCommands:
     push r1
 
     loadn r1, #'w'
-    store command_move_up, r1
+    store COMMAND_MOVE_UP, r1
 
     loadn r1, #'a'
-    store command_move_left, r1
+    store COMMAND_MOVE_LEFT, r1
 
     loadn r1, #'s'
-    store command_move_down, r1
+    store COMMAND_MOVE_DOWN, r1
 
     loadn r1, #'d'
-    store command_move_right, r1
+    store COMMAND_MOVE_RIGHT, r1
 
     pop r1
     rts
