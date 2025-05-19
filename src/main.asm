@@ -9,6 +9,11 @@ COMMAND_MOVE_LEFT: var #1
 COMMAND_MOVE_RIGHT: var #1
 
 ;; ####
+;; Sprites constants
+;;
+SPRITE_PLAYER_ONE: var #4
+
+;; ####
 ;; Control variables
 ;;
 current_pos: var #1
@@ -17,15 +22,14 @@ previous_pos: var #1
 main:
     loadn r1, #620
     store current_pos, r1
+    loadn r7, #SPRITE_PLAYER_ONE
     call printPlayer
 
     main_loop:
-        call loadCommands
         call readChar        ;; stdio.asm
         call execCommand
 
         jmp main_loop
-
     halt
 
 execCommand:
@@ -52,23 +56,21 @@ execCommand:
     pop fr
     rts
 
-loadCommands:
-    push r1
+;; ####
+;; Configure commands
+;;
+static COMMAND_MOVE_UP, #'w'
+static COMMAND_MOVE_LEFT, #'a'
+static COMMAND_MOVE_DOWN, #'s'
+static COMMAND_MOVE_RIGHT, #'d'
 
-    loadn r1, #'w'
-    store COMMAND_MOVE_UP, r1
-
-    loadn r1, #'a'
-    store COMMAND_MOVE_LEFT, r1
-
-    loadn r1, #'s'
-    store COMMAND_MOVE_DOWN, r1
-
-    loadn r1, #'d'
-    store COMMAND_MOVE_RIGHT, r1
-
-    pop r1
-    rts
+;; ####
+;; Configure sprites
+;;
+static SPRITE_PLAYER_ONE + #0, #'A'
+static SPRITE_PLAYER_ONE + #1, #'A'
+static SPRITE_PLAYER_ONE + #2, #'A'
+static SPRITE_PLAYER_ONE + #3, #'A'
 
 ;; #include src/stdio.asm
 ;; #include src/moves.asm
