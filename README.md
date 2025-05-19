@@ -11,24 +11,26 @@ Abra seu terminal e digite:
 
 ```sh
 git clone git@github.com:Gaius10/ze_bombinha_2.git 
-cd ze_bombinha
+cd ze_bombinha_2
 make run
 ```
 ### 1.2 Caso vc use Windows
 
 Desinstale seu sistema operacional, instale alguma distro Linux e então pule para o capítulo 1.1
 
-## 2. Gostou do framework? Quer copiar a gente?
-
-Um esqueleto desse repositório ficará disponível em algum lugar do github.
-Ele conterá apenas nosso makefile, os utilitários e a estrutura de pastas, é só baixar e começar a codar em assembly!
-
-## 3. Organização das pastas
+## 2. Organização das pastas
 
 @todo
 
-## 4. Convenções
+## 3. Convenções
 
 - r0 reservado para retorno de funções
 - Funções sempre darão push do r1 pra frente
 - Passagem de parâmetros do r1 pra frente
+
+## 4. Gostou do framework? Quer copiar a gente?
+
+Um esqueleto desse repositório ficará disponível em algum lugar do github.
+Ele conterá apenas nosso makefile, os utilitários e a estrutura de pastas, é só baixar e começar a codar em assembly!
+
+
