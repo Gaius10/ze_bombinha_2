@@ -33,4 +33,6 @@ Desinstale seu sistema operacional, instale alguma distro Linux e então pule pa
 Um esqueleto desse repositório ficará disponível em algum lugar do github.
 Ele conterá apenas nosso makefile, os utilitários e a estrutura de pastas, é só baixar e começar a codar em assembly!
 
+## 5. Como criar mods
 
+@todo
