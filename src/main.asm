@@ -20,12 +20,7 @@ main:
     halt
 
 execCommand:
-    push frsm
-        call execCommand
-
-        jmp main_loop
-    halt
-
+    push fr
     push r1
 
     load r1, COMMAND_MOVE_UP
