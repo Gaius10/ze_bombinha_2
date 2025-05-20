@@ -26,7 +26,8 @@ Desinstale seu sistema operacional, instale alguma distro Linux e então pule pa
 
 - r0 reservado para retorno de funções
 - Funções sempre darão push do r1 pra frente
-- Passagem de parâmetros do r1 pra frente
+- r7 e r6 reservados para o clock
+
 
 ## 4. Gostou do framework? Quer copiar a gente?
 
