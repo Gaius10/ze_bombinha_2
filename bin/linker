@@ -13,7 +13,6 @@ t_filename = sys.argv[2]
 t_content = ""
 
 with open(s_filename, 'r') as s_file:
-    replacements = []
     s_content = s_file.read()
     t_content = s_content
 
