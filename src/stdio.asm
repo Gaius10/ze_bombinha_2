@@ -52,7 +52,7 @@ printPlayer:
     add r2, r2, r3
     outchar r1, r2
 
-    ;; Quarto pixoo
+    ;; Quarto pixo
     dec r2
     outchar r1, r2
     
@@ -85,4 +85,3 @@ printPlayer:
     pop r2
     pop r1
     rts
-
