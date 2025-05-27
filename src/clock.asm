@@ -4,7 +4,7 @@
 ;; Para alterar o tempo de delay, alterar configurações CLOCK_MSB e CLOCK_LSB
 ;; no arquivo config/genereal.asm
 ;;
-clock:
+clockDelay:
     push r7
     push r6
     push r5

@@ -1,7 +1,7 @@
 ;; ####
 ;; Lê tecla digitada e a salva no registrador r0
 ;;
-readChar:
+stdioReadChar:
 	push r7
 	push r6
 
@@ -26,40 +26,24 @@ readChar:
 ;; ####
 ;; Imprime jogador na posição adequada da tela e restaura posição anterior
 ;;
+;; @param r6: posição onde será desenhado o primeiro pixo
 ;; @param r7: endereço de memória do primeiro pixo do sprite a ser desenhado
-printPlayer:
+;;
+stdioPrintSprite:
+    push r0
     push r1
     push r2
-    push r3
+    push r6
     push r7
 
     ;; Vai ser usado nas somas
     ;; A tela tem 30 linhas e 40 colunas
     ;; Somar 40 é equivalente a descer verticalmente
-    loadn r3, #40
+    loadn r0, #40
 
-    ;; Limpa posição anterior
     ;; Primeiro pixo
-    loadn r1, #' '
-    load r2, previous_pos
-    outchar r1, r2
-
-    ;; Segundo pixo
-    inc r2
-    outchar r1, r2
-
-    ;; Terceiro pixo
-    add r2, r2, r3
-    outchar r1, r2
-
-    ;; Quarto pixo
-    dec r2
-    outchar r1, r2
-    
-    ;; Preenche posição atual
-    ;; Primeiro pixo
-    loadi r1, r7 
-    load r2, current_pos
+    loadi r1, r7
+    mov r2, r6
     outchar r1, r2
 
     ;; Segundo pixo
@@ -71,7 +55,7 @@ printPlayer:
     ;; Terceiro pixo
     inc r7
     loadi r1, r7
-    add r2, r2, r3
+    add r2, r2, r0      ;; r2 += 40
     outchar r1, r2
 
     ;; Quarto pixo
@@ -81,7 +65,8 @@ printPlayer:
     outchar r1, r2
 
     pop r7
-    pop r3
+    pop r6
     pop r2
     pop r1
+    pop r0
     rts

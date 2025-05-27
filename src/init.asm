@@ -2,16 +2,16 @@
 ;; Inicializa todas as variáveis necessárias.
 ;; Essa função deve ser chamada apenas uma vez, no início de cada jogo.
 ;;
-init:
+initGame:
     push r7
-    push r1
+    push r6
 
     ;; Carrega player na posição inicial
-    loadn r1, #620
-    store current_pos, r1
+    loadn r6, #620
+    store current_pos, r6
     loadn r7, #SPRITE_PLAYER_ONE
-    call printPlayer
+    call stdioPrintSprite
 
-    pop r1
+    pop r6
     pop r7
     rts
