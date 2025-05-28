@@ -6,13 +6,9 @@ commandMoveUp:
     push r7
 
     ;; Limpa tela
-    load r6, previous_pos
+    load r6, current_pos
     loadn r7, #SPRITE_VAZIO
     call stdioPrintSprite
-
-    ;; Atualiza posição anterior
-    load r6, current_pos
-    store previous_pos, r6
 
     ;; Atualiza posição atual
     loadn r1, #40
@@ -34,13 +30,9 @@ commandMoveDown:
     push r7
 
     ;; Limpa tela
-    load r6, previous_pos
+    load r6, current_pos
     loadn r7, #SPRITE_VAZIO
     call stdioPrintSprite
-
-    ;; Atualiza posição anterior
-    load r6, current_pos
-    store previous_pos, r6
 
     ;; Atualiza posição atual
     loadn r1, #40
@@ -61,13 +53,9 @@ commandMoveLeft:
     push r7
 
     ;; Limpa tela
-    load r6, previous_pos
+    load r6, current_pos
     loadn r7, #SPRITE_VAZIO
     call stdioPrintSprite
-
-    ;; Atualiza posição anterior
-    load r6, current_pos
-    store previous_pos, r6
 
     ;; Atualiza posição atual
     dec r6
@@ -86,13 +74,9 @@ commandMoveRight:
     push r7
 
     ;; Limpa tela
-    load r6, previous_pos
+    load r6, current_pos
     loadn r7, #SPRITE_VAZIO
     call stdioPrintSprite
-
-    ;; Atualiza posição anterior
-    load r6, current_pos
-    store previous_pos, r6
 
     ;; Atualiza posição atual
     inc r6
