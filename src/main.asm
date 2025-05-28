@@ -3,9 +3,9 @@ jmp main
 ;; ####
 ;; Control variables
 ;;
-current_pos: var #1
-previous_pos: var #1
-current_frame: var #1
+current_pos: var #1     ; controlada pelos comandos 'move'
+current_frame: var #1   ; controlada pelo clockDelay
+scenario_map: var #300
 
 main:
     call initGame
@@ -56,3 +56,4 @@ execCommand:
 ;; #include config/commands.asm
 ;; #include config/sprites.asm
 ;; #include config/general.asm
+;; #include config/screen.asm
