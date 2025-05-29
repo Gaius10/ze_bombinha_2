@@ -15,7 +15,7 @@ initGame:
     ;; Carrega player na posição inicial
     loadn r6, #620
     store current_pos, r6
-    loadn r7, #SPRITE_PLAYER_ONE
+    loadn r7, #SPRITE_PLAYER_ONE_FRENTE
     call stdioPrintSprite
 
     pop r6
