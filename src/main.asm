@@ -1,11 +1,21 @@
 jmp main
 
 ;; ####
-;; Control variables
+;; Variáveis de controle
 ;;
 current_pos: var #1     ; controlada pelos comandos 'move'
 current_frame: var #1   ; controlada pelo clockDelay
 scenario_map: var #300
+
+;; Obs.: Se quiser escovar bits, da pra refazer essa lógica usando
+;;       flags e operações bitwise
+;; Enum: player state
+;; 0 -> parado
+;; 1 -> movendo cima
+;; 2 -> movendo baixo
+;; 3 -> movendo esquerda
+;; 4 -> movendo direita
+player_state: var #1
 
 main:
     call initGame
