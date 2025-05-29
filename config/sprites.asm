@@ -3,21 +3,51 @@
 ;;
 
 ;; Entidades
-SPRITE_PLAYER_ONE: var #4
+SPRITE_PLAYER_ONE_FRENTE:           var #4
+SPRITE_PLAYER_ONE_DIREITA:          var #4
+SPRITE_PLAYER_ONE_DIREITA_ANDANDO:  var #4
+SPRITE_PLAYER_ONE_ESQUERDA:         var #4
+SPRITE_PLAYER_ONE_ESQUERDA_ANDANDO: var #4
+SPRITE_PLAYER_ONE_COSTAS:           var #4
 
 ;; Cenário
-SPRITE_VAZIO: var #4
+SPRITE_VAZIO:  var #4
 SPRITE_TIJOLO: var #4
 
 ;; ####
 ;; Configure sprites
 ;;
 
-;; Entidades
-static SPRITE_PLAYER_ONE + #0, #'A'
-static SPRITE_PLAYER_ONE + #1, #'A'
-static SPRITE_PLAYER_ONE + #2, #'A'
-static SPRITE_PLAYER_ONE + #3, #'A'
+;; Player 1
+static SPRITE_PLAYER_ONE_FRENTE + #0, #'A'
+static SPRITE_PLAYER_ONE_FRENTE + #1, #'A'
+static SPRITE_PLAYER_ONE_FRENTE + #2, #'A'
+static SPRITE_PLAYER_ONE_FRENTE + #3, #'A'
+
+static SPRITE_PLAYER_ONE_DIREITA + #0, #'>'
+static SPRITE_PLAYER_ONE_DIREITA + #1, #'>'
+static SPRITE_PLAYER_ONE_DIREITA + #2, #'>'
+static SPRITE_PLAYER_ONE_DIREITA + #3, #'>'
+
+static SPRITE_PLAYER_ONE_DIREITA_ANDANDO + #0, #'>'
+static SPRITE_PLAYER_ONE_DIREITA_ANDANDO + #1, #'>'
+static SPRITE_PLAYER_ONE_DIREITA_ANDANDO + #2, #'o'
+static SPRITE_PLAYER_ONE_DIREITA_ANDANDO + #3, #'o'
+
+static SPRITE_PLAYER_ONE_ESQUERDA + #0, #'<'
+static SPRITE_PLAYER_ONE_ESQUERDA + #1, #'<'
+static SPRITE_PLAYER_ONE_ESQUERDA + #2, #'<'
+static SPRITE_PLAYER_ONE_ESQUERDA + #3, #'<'
+
+static SPRITE_PLAYER_ONE_ESQUERDA_ANDANDO + #0, #'<'
+static SPRITE_PLAYER_ONE_ESQUERDA_ANDANDO + #1, #'<'
+static SPRITE_PLAYER_ONE_ESQUERDA_ANDANDO + #2, #'o'
+static SPRITE_PLAYER_ONE_ESQUERDA_ANDANDO + #3, #'o'
+
+static SPRITE_PLAYER_ONE_COSTAS + #0, #'|'
+static SPRITE_PLAYER_ONE_COSTAS + #1, #'|'
+static SPRITE_PLAYER_ONE_COSTAS + #2, #'|'
+static SPRITE_PLAYER_ONE_COSTAS + #3, #'|'
 
 ;; Cenário
 static SPRITE_VAZIO + #0, #' '
