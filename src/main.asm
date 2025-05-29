@@ -15,7 +15,7 @@ scenario_map: var #300
 ;; 2 -> movendo baixo
 ;; 3 -> movendo esquerda
 ;; 4 -> movendo direita
-player_state: var #1
+player_one_state: var #1
 
 main:
     call initGame

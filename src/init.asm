@@ -15,7 +15,7 @@ initGame:
 
     ;; Inicializa player state parado
     loadn r0, #0
-    store player_state, r0
+    store player_one_state, r0
 
     ;; Carrega player na posição inicial
     loadn r6, #620
