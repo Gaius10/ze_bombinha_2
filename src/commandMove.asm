@@ -16,7 +16,7 @@ commandMoveUp:
     store current_pos, r6
 
     ;; Desenha na tela
-    loadn r7, #SPRITE_PLAYER_ONE
+    loadn r7, #SPRITE_PLAYER_ONE_COSTAS
     call stdioPrintSprite
 
     pop r7
@@ -40,7 +40,7 @@ commandMoveDown:
     store current_pos, r6
 
     ;; Desenha na tela
-    loadn r7, #SPRITE_PLAYER_ONE
+    loadn r7, #SPRITE_PLAYER_ONE_FRENTE
     call stdioPrintSprite
 
     pop r7
@@ -62,7 +62,7 @@ commandMoveLeft:
     store current_pos, r6
 
     ;; Desenha na tela
-    loadn r7, #SPRITE_PLAYER_ONE
+    loadn r7, #SPRITE_PLAYER_ONE_ESQUERDA
     call stdioPrintSprite
 
     pop r7
@@ -83,7 +83,7 @@ commandMoveRight:
     store current_pos, r6
 
     ;; Desenha na tela
-    loadn r7, #SPRITE_PLAYER_ONE
+    loadn r7, #SPRITE_PLAYER_ONE_DIREITA
     call stdioPrintSprite
 
     pop r7
