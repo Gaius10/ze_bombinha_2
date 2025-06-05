@@ -2,7 +2,7 @@
 ;; Atualiza relógio (variável clock)
 ;;
 ;; Para alterar o tempo de delay, alterar configurações CLOCK_MSB e CLOCK_LSB
-;; no arquivo config/genereal.asm
+;; no arquivo config/general.asm
 ;;
 clockDelay:
     push r7
@@ -27,12 +27,9 @@ clockDelay:
         dec r6
         jnz _clock_tic_tac
 
-    ;;
-    ;; Atualiza frame number (variável clock)
-    ;;
-    load r5, current_frame
+    load r5, clock
     inc r5
-    store current_frame, r5
+    store clock, r5
 
     pop r5
     pop r6

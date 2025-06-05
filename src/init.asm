@@ -7,6 +7,10 @@ initGame:
     push r6
     push r7
 
+    ;; Zera clock
+    loadn r0, #0
+    store clock, r0
+
     ;; Carrega mapa de cenário
     call initGameCenario
 
