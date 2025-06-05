@@ -31,7 +31,6 @@ initGame:
     rts
 
 initGameCenario:
-   
     push r0 ;; verificar se terminou a tela
     push r1 ;; leitor das strings
     push r2 ;; carrega as strings
@@ -45,7 +44,7 @@ initGameCenario:
     loadn r3, #40                             ;; pula pra proxima linha 
     loadn r6, #0
     loadn r4, #'#'
-    loadn r0, #1158                           ;; penultimo pixel da penultima linha
+    loadn r0, #1158                           ;; penultimo pixo da penultima linha
 
     initGameCenarioLoop:
         cmp r6, r0
@@ -71,8 +70,7 @@ initGameCenario:
         inc r2
         jmp initGameCenarioLoop
 
-    initGameDraw: 
-  
+initGameDraw:
         loadn r7, #SPRITE_TIJOLO 
         call stdioPrintSprite
         inc r2
@@ -90,6 +88,5 @@ initGameCenario:
     pop r2
     pop r1
     pop r0
-    
     rts
 
