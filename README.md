@@ -10,7 +10,7 @@ Link para o repositório do processador do ICMC (A.K.A. processador do Simões):
 Abra seu terminal e digite:
 
 ```sh
-git clone git@github.com:Gaius10/ze_bombinha_2.git 
+git clone git@github.com:Gaius10/ze_bombinha_2.git
 cd ze_bombinha_2
 make run
 ```

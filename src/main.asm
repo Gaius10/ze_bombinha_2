@@ -3,8 +3,8 @@ jmp main
 ;; ####
 ;; Variáveis de controle
 ;;
+clock: var #1           ; controlada pelo clockDelay
 current_pos: var #1     ; controlada pelos comandos 'move'
-current_frame: var #1   ; controlada pelo clockDelay
 scenario_map: var #300
 
 ;; Obs.: Se quiser escovar bits, da pra refazer essa lógica usando
@@ -18,15 +18,20 @@ scenario_map: var #300
 player_one_state: var #1
 
 main:
-    call initGame
+    ; call initGame
 
     ;;
     ;; Loop principal
     ;;
     main_loop:
+        loadn r4, #'A'
+        load r5, clock
+        outchar r4, r5
+
         call clockDelay
-        call stdioReadChar
-        call execCommand
+        ; call stdioReadChar
+        ; call execCommand
+        ; call animate
 
         jmp main_loop
     halt
@@ -63,6 +68,7 @@ execCommand:
 ;; #include src/stdio.asm
 ;; #include src/clock.asm
 ;; #include src/commandMove.asm
+;; #include src/animate.asm
 ;; #include config/commands.asm
 ;; #include config/sprites.asm
 ;; #include config/general.asm

@@ -19,6 +19,10 @@ commandMoveUp:
     loadn r7, #SPRITE_PLAYER_ONE_COSTAS
     call stdioPrintSprite
 
+    ;; Atualiza player state
+    loadn r1, #1
+    store player_one_state, r1
+
     pop r7
     pop r6
     pop r1
@@ -43,6 +47,10 @@ commandMoveDown:
     loadn r7, #SPRITE_PLAYER_ONE_FRENTE
     call stdioPrintSprite
 
+    ;; Atualiza player state
+    loadn r1, #2
+    store player_one_state, r1
+
     pop r7
     pop r6
     pop r1
@@ -65,6 +73,10 @@ commandMoveLeft:
     loadn r7, #SPRITE_PLAYER_ONE_ESQUERDA
     call stdioPrintSprite
 
+    ;; Atualiza player state
+    loadn r1, #3
+    store player_one_state, r1
+
     pop r7
     pop r6
     rts
@@ -85,6 +97,10 @@ commandMoveRight:
     ;; Desenha na tela
     loadn r7, #SPRITE_PLAYER_ONE_DIREITA
     call stdioPrintSprite
+
+    ;; Atualiza player state
+    loadn r1, #4
+    store player_one_state, r1
 
     pop r7
     pop r6
