@@ -18,20 +18,24 @@ scenario_map: var #300
 player_one_state: var #1
 
 main:
-    ; call initGame
+    call initGame
 
     ;;
     ;; Loop principal
     ;;
     main_loop:
-        loadn r4, #'A'
-        load r5, clock
-        outchar r4, r5
-
         call clockDelay
-        ; call stdioReadChar
-        ; call execCommand
-        ; call animate
+        call animate
+
+        ;; if (clock % 3 != 0) goto main_loop
+        load r0, clock
+        loadn r1, #3
+        mod r1, r0, r1
+        jnz main_loop
+
+        ;; else execCommand
+        call stdioReadChar
+        call execCommand
 
         jmp main_loop
     halt
