@@ -13,6 +13,7 @@ SPRITE_PLAYER_ONE_ESQUERDA_ANDANDO: var #4
 ;; Cenário
 SPRITE_VAZIO:  var #4
 SPRITE_TIJOLO: var #4
+SPRITE_TIJOLO_INQUEBRAVEL: var #4
 
 ;; ####
 ;; Configure sprites
@@ -59,3 +60,8 @@ static SPRITE_TIJOLO + #0, #'#'
 static SPRITE_TIJOLO + #1, #'#'
 static SPRITE_TIJOLO + #2, #'#'
 static SPRITE_TIJOLO + #3, #'#'
+
+static SPRITE_TIJOLO_INQUEBRAVEL + #0, #'@'
+static SPRITE_TIJOLO_INQUEBRAVEL + #1, #'@'
+static SPRITE_TIJOLO_INQUEBRAVEL + #2, #'@'
+static SPRITE_TIJOLO_INQUEBRAVEL + #3, #'@'

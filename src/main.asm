@@ -24,20 +24,20 @@ main:
     ;; Loop principal
     ;;
     main_loop:
-        call clockDelay
-        call animate
+        ; call clockDelay
+        ; call animate
 
         ;; if (clock % 3 != 0) goto main_loop
-        load r0, clock
-        loadn r1, #3
-        mod r1, r0, r1
-        jnz main_loop
+        ; load r0, clock
+        ; loadn r1, #3
+        ; mod r1, r0, r1
+        ; jnz main_loop
 
         ;; else execCommand
-        call stdioReadChar
-        call execCommand
+        ; call stdioReadChar
+        ; call execCommand
 
-        jmp main_loop
+        ; jmp main_loop
     halt
 
 ;;
