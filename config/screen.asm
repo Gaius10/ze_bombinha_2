@@ -7,8 +7,8 @@
 ;;
 
 SPRITE_TAG_VOID: var #1
-SPRITE_TAG_COMMON_WALL: var #1
-SPRITE_TAG_UNBREAKABLE_WALL: var #1
+sprite_tag_common_wall: var #1
+sprite_tag_unbreakable_wall: var #1
 
 ;; ########
 ;; Cenario 1
@@ -30,5 +30,5 @@ CENARIO1_L15: string "####################"
 ;; ########
 
 static SPRITE_TAG_VOID, #' '
-static SPRITE_TAG_COMMON_WALL, #'#'
-static SPRITE_TAG_UNBREAKABLE_WALL, #'@'
+static sprite_tag_common_wall, #'#'
+static sprite_tag_unbreakable_wall, #'@'

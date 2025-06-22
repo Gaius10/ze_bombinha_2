@@ -6,6 +6,7 @@ jmp main
 clock: var #1           ; controlada pelo clockDelay
 current_pos: var #1     ; controlada pelos comandos 'move'
 scenario_map: var #300
+scenario_bomba: var #1200
 
 ;; Obs.: Se quiser escovar bits, da pra refazer essa lógica usando
 ;;       flags e operações bitwise
@@ -50,19 +51,19 @@ execCommand:
 
     load r1, COMMAND_MOVE_UP
     cmp r0, r1
-    ceq commandMoveUp
+    ceq commandmoveup
 
     load r1, COMMAND_MOVE_DOWN
     cmp r0, r1
-    ceq commandMoveDown
+    ceq commandmovedown
 
     load r1, COMMAND_MOVE_LEFT
     cmp r0, r1
-    ceq commandMoveLeft
+    ceq commandmoveleft
 
     load r1, COMMAND_MOVE_RIGHT
     cmp r0, r1
-    ceq commandMoveRight
+    ceq commandmoveright
 
     load r1, COMMAND_BOMBA
     cmp r0, r1
@@ -75,11 +76,11 @@ execCommand:
 ;; #include src/init.asm
 ;; #include src/stdio.asm
 ;; #include src/clock.asm
+;; #include src/commandBomba.asm
 ;; #include src/commandMove.asm
 ;; #include src/animate.asm
 ;; #include src/scenario.asm
 ;; #include config/commands.asm
-;; #include config/commandBomba.asm
 ;; #include config/sprites.asm
 ;; #include config/general.asm
 ;; #include config/screen.asm

@@ -2,8 +2,12 @@
 ;; requires src/scenario.asm
 
 commandmoveup:
+    push r0
     push r1
     push r2
+    push r3
+    push r4
+    push r5
     push r6
     push r7
 
@@ -49,9 +53,30 @@ commandmoveup:
 
     ;; ########
     ; limpa tela
-    ; stdioprintsprite(r6: pos, r7: sprite)
-    loadn r7, #sprite_vazio
-    call stdioprintsprite
+    ;; r5 carrega o mapa de cenário com as bombas com todos os pixos
+    loadn r5, #scenario_bomba
+    ;; r6 carrega posição atual
+    load r6, current_pos
+    ;;muda de linha verticalmente
+    loadn r4, #40
+    ;; checa posição do personagem no mapa de cenário
+    add r5, r5, r6 
+    ;; carrega em r7 o que está presente no mapa de cenário (vazio | bomba)
+    loadi r7, r5
+    ;; funcionamento igual o stdioprintsprite
+    outchar r7, r6
+    inc r5
+    inc r6
+    loadi r7, r5
+    outchar r7, r6
+    add r5, r5, r4
+    add r6, r6, r4
+    loadi r7, r5
+    outchar r7, r6
+    dec r5
+    dec r6
+    loadi r7, r5
+    outchar r7, r6
     ;; ########
 
     ;; ########
@@ -63,8 +88,8 @@ commandmoveup:
     ; desenha na tela
     ; stdioprintsprite(r6: pos, r7: sprite)
     mov r6, r2
-    loadn r7, #sprite_player_one_costas
-    call stdioprintsprite
+    loadn r7, #SPRITE_PLAYER_ONE_COSTAS
+    call stdioPrintSprite
     ;; ########
 
     ;; ########
@@ -78,28 +103,53 @@ commandmoveup:
 
     pop r7
     pop r6
+    pop r5
+    pop r4
+    pop r3
     pop r2
     pop r1
+    pop r0
     rts
 
 commandmovedown:
+    push r0
     push r1
+    push r2
+    push r3
+    push r4
+    push r5
     push r6
     push r7
 
     ;; limpa tela
+    loadn r5, #scenario_bomba
     load r6, current_pos
-    loadn r7, #sprite_vazio
-    call stdioprintsprite
+    loadn r4, #40
+    add r5, r5, r6 
+    loadi r7, r5
+    outchar r7, r6
+    inc r5
+    inc r6
+    loadi r7, r5
+    outchar r7, r6
+    add r5, r5, r4
+    add r6, r6, r4
+    loadi r7, r5
+    outchar r7, r6
+    dec r5
+    dec r6
+    loadi r7, r5
+    outchar r7, r6
 
     ;; atualiza posição atual
+    load r6, current_pos
     loadn r1, #40
     add r6, r6, r1
     store current_pos, r6
 
     ;; desenha na tela
-    loadn r7, #sprite_player_one_frente
-    call stdioprintsprite
+    loadn r7, #SPRITE_PLAYER_ONE_FRENTE
+    call stdioPrintSprite
 
     ;; atualiza player state
     loadn r1, #2
@@ -107,25 +157,52 @@ commandmovedown:
 
     pop r7
     pop r6
+    pop r5
+    pop r4
+    pop r3
+    pop r2
     pop r1
+    pop r0
     rts
 
 commandmoveleft:
+    push r0
+    push r1
+    push r2
+    push r3
+    push r4
+    push r5
     push r6
     push r7
 
     ;; limpa tela
+    loadn r5, #scenario_bomba
     load r6, current_pos
-    loadn r7, #sprite_vazio
-    call stdioprintsprite
+    loadn r4, #40
+    add r5, r5, r6 
+    loadi r7, r5
+    outchar r7, r6
+    inc r5
+    inc r6
+    loadi r7, r5
+    outchar r7, r6
+    add r5, r5, r4
+    add r6, r6, r4
+    loadi r7, r5
+    outchar r7, r6
+    dec r5
+    dec r6
+    loadi r7, r5
+    outchar r7, r6
 
     ;; atualiza posição atual
+    load r6, current_pos
     dec r6
     store current_pos, r6
 
     ;; desenha na tela
-    loadn r7, #sprite_player_one_esquerda
-    call stdioprintsprite
+    loadn r7, #SPRITE_PLAYER_ONE_ESQUERDA
+    call stdioPrintSprite
 
     ;; atualiza player state
     loadn r1, #3
@@ -133,24 +210,52 @@ commandmoveleft:
 
     pop r7
     pop r6
+    pop r5
+    pop r4
+    pop r3
+    pop r2
+    pop r1
+    pop r0
     rts
 
 commandmoveright:
+    push r0
+    push r1
+    push r2
+    push r3
+    push r4
+    push r5
     push r6
     push r7
 
     ;; limpa tela
+    loadn r5, #scenario_bomba
     load r6, current_pos
-    loadn r7, #sprite_vazio
-    call stdioprintsprite
+    loadn r4, #40
+    add r5, r5, r6 
+    loadi r7, r5
+    outchar r7, r6
+    inc r5
+    inc r6
+    loadi r7, r5
+    outchar r7, r6
+    add r5, r5, r4
+    add r6, r6, r4
+    loadi r7, r5
+    outchar r7, r6
+    dec r5
+    dec r6
+    loadi r7, r5
+    outchar r7, r6
 
     ;; atualiza posição atual
+    load r6, current_pos
     inc r6
     store current_pos, r6
 
     ;; desenha na tela
-    loadn r7, #sprite_player_one_direita
-    call stdioprintsprite
+    loadn r7, #SPRITE_PLAYER_ONE_DIREITA
+    call stdioPrintSprite
 
     ;; atualiza player state
     loadn r1, #4
@@ -158,4 +263,10 @@ commandmoveright:
 
     pop r7
     pop r6
+    pop r5
+    pop r4
+    pop r3
+    pop r2
+    pop r1
+    pop r0
     rts
