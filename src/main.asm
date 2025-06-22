@@ -64,6 +64,10 @@ execCommand:
     cmp r0, r1
     ceq commandMoveRight
 
+    load r1, COMMAND_BOMBA
+    cmp r0, r1
+    ceq commandBomba
+
     pop r1
     pop fr
     rts
@@ -75,6 +79,7 @@ execCommand:
 ;; #include src/animate.asm
 ;; #include src/scenario.asm
 ;; #include config/commands.asm
+;; #include config/commandBomba.asm
 ;; #include config/sprites.asm
 ;; #include config/general.asm
 ;; #include config/screen.asm

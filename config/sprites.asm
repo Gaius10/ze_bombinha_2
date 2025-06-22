@@ -15,9 +15,18 @@ SPRITE_VAZIO:  var #4
 SPRITE_TIJOLO: var #4
 SPRITE_TIJOLO_INQUEBRAVEL: var #4
 
+;; Bomba
+SPRITE_BOMBA: var #4
+
 ;; ####
 ;; Configure sprites
 ;;
+
+;; Bomba 
+static SPRITE_BOMBA + #0, #'O'
+static SPRITE_BOMBA + #1, #'O'
+static SPRITE_BOMBA + #2, #'O'
+static SPRITE_BOMBA + #3, #'O'
 
 ;; Player 1
 static SPRITE_PLAYER_ONE_FRENTE + #0, #'A'
