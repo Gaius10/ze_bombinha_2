@@ -100,3 +100,24 @@ animatePlayerOne:
     pop r1
     pop r0
     rts
+
+;; animateBombs:
+
+;;carregar state_bomb pra saber se tem bomba no mapa
+;;if (state_bomb)
+;;       
+;;      load r0, clock
+;;      loadn r1, #2
+;;      mod r2, r0, r1
+;;      jz _animateBomb2
+;;
+;;      _animateBomb1:
+;;          
+;;          pegar posição da bomba e trocar por uma sprite (usar stdioprintsprite e fazer um store para scenario_bomba)
+;;
+;;      _animateBomb2:
+;;
+;;          pegar posição da bomba e trocar por uma sprite (usar stdioprintsprite e fazer um store para scenario_bomba)
+;;
+;;     usar uma variavel para repetir a animação x vezes e depois chamar uma função da explosão
+;;     termina limpando a bomba do cenario e carregando o state_bomb como 0
