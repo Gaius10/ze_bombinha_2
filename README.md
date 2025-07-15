@@ -1,6 +1,6 @@
 # ZÉ BOMBINHA 2
 
-Nossa versão do jogo Bomber Men feita para rodar no processador do Simões.
+Nossa versão do jogo Bomberman feita para rodar no processador do Simões.
 Link para o repositório do processador do ICMC (A.K.A. processador do Simões): https://github.com/simoesusp/Processador-ICMC
 
 ## 1. Como rodar isso na sua máquina
